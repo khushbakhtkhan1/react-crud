@@ -38,11 +38,11 @@ export default function Home() {
   return (
     <div>
       <h1>My Posts</h1>
-      <AddPostForm />
+  
       <LineChart />
       <BarChart />
       <AreaChart />
-      <Posts onDelete={handleDelete} onUpdate={handleUpdate} />
+   
     </div>
   );
 }

@@ -1,56 +1,455 @@
 import React from "react";
-import Chart from "react-apexcharts";
+import dynamic from "next/dynamic";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
+
+const data = [
+  {
+    category: "File",
+    details: "C:\\ProgramData\\KMSAutoS\\bin\\KMSSS.exe",
+    command_line: "",
+    action_taken: "Deleted",
+    occurrences: 1,
+    threat_type: "Potentially harmful application",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.105",
+    endpoint_type: "Workstation",
+    detected_on: "15 April 2024, 18:44:40",
+    user: "SYSTEM",
+    detecting_module: "Antimalware",
+    detecting_technology: "On-Demand - Scan Tasks",
+    threat_name: "Application.Hacktool.KMSActivator.CK",
+    fileless_attack: false,
+    sha256: "8d49a4e7f2ca1239311f6b1d69ebf3e95735da9e0cdfbe8235a28e256cbaf6c9",
+    container_host: "",
+  },
+  {
+    category: "File",
+    details: "C:\\ProgramData\\KMSAutoS\\bin\\TunMirror.exe",
+    command_line: "",
+    action_taken: "Deleted",
+    occurrences: 1,
+    threat_type: "Potentially harmful application",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.105",
+    endpoint_type: "Workstation",
+    detected_on: "15 April 2024, 18:44:36",
+    user: "SYSTEM",
+    detecting_module: "Antimalware",
+    detecting_technology: "On-Demand - Scan Tasks",
+    threat_name: "Application.Hacktool.KMSActivator.AK",
+    fileless_attack: false,
+    sha256: "02145c3f60e704df17919cd26cb79bd31a12b98d66b0b7fd1cf7ea894ad1f871",
+    container_host: "",
+  },
+  {
+    category: "File",
+    details: "C:\\ProgramData\\KMSAutoS\\bin\\TunMirror2.exe",
+    command_line: "",
+    action_taken: "Deleted",
+    occurrences: 1,
+    threat_type: "Potentially harmful application",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.105",
+    endpoint_type: "Workstation",
+    detected_on: "15 April 2024, 18:44:35",
+    user: "SYSTEM",
+    detecting_module: "Antimalware",
+    detecting_technology: "On-Demand - Scan Tasks",
+    threat_name: "Application.Hacktool.KMSActivator.HA",
+    fileless_attack: false,
+    sha256: "d9cd47831faba4053225dac181709fd7ab9d066c3de6f541968fffeeee4a9bf9",
+    container_host: "",
+  },
+  {
+    category: "File",
+    details: "C:\\Users\\USER\\AppData\\Roaming\\vlewgqltdi\\KMS_pico.exe",
+    command_line: "",
+    action_taken: "Deleted",
+    occurrences: 1,
+    threat_type: "Potentially harmful application",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.105",
+    endpoint_type: "Workstation",
+    detected_on: "15 April 2024, 18:10:42",
+    user: "SYSTEM",
+    detecting_module: "Antimalware",
+    detecting_technology: "On-Demand - Scan Tasks",
+    threat_name: "Application.Hacktool.KMSAuto.N",
+    fileless_attack: false,
+    sha256: "64c731adbe1b96cb5765203b1e215093dcf268d020b299445884a4ae62ed2d3a",
+    container_host: "",
+  },
+  {
+    category: "Website",
+    details: "argyllsleonora.top/pntne",
+    command_line: "",
+    action_taken: "Blocked",
+    occurrences: 3,
+    threat_type: "Web malware",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.105",
+    endpoint_type: "Workstation",
+    detected_on: "13 April 2024, 23:56:09",
+    user: "USER",
+    detecting_module: "Network Protection",
+    detecting_technology: "Web protection - Web Traffic Scan",
+    threat_name: "",
+    fileless_attack: false,
+    sha256: "",
+    container_host: "",
+  },
+  {
+    category: "Website",
+    details:
+      "seegamezpicks.info/RW1IOVYkDytUaSRQKh8jNwF1HGQDSHp/MnYIPVtkIF95XTVzBXgXNSkCPV0wNwImTXgrCDwcZAMOBnEUBzclUQ4NFHB4AHUsEnMAMTcKfBR0OyQBFBMHDWwSEycGcwAfNAp7BDMvGV0MEwQ7bxR0AglfFSYKCW1iCSgyABgVFytoH3c4LGMuDD4dfGd1PAlrAA0EElsCKSgtcDoxNw1REykvDmwXEwcdbhR0VAZ0PgwoHl4PMC8/ezIHOittFRQGLHU+Mi8feyEiPHlJLxc6cW4CFDcJWAQALx9RBzAoGkoEFAMNcB4HKwtaACE0D1IULjsbVgQUA2V8BAQ7OH4yECMqXToTFx5RFwY/D1ESEgoZaxsXNA1sByYGCngYIS8PawMJCg59Mi4FKng6ExceUhQjKgxsGgcvDnoXLiMpexQyAgxoZhc8JnwUATsrWxouVAZ7PQQEDFEmJyUbaxISAwJ7NXQ7D3sQcBUbfzEXPCZ8AAY7AWsbMlQGezwfXR5vbiQ8e10XDTwke3AvHidXJngsAAwYDxgfQBkzGwNoOw",
+    command_line: "",
+    action_taken: "Blocked",
+    occurrences: 1,
+    threat_type: "Web malware",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.105",
+    endpoint_type: "Workstation",
+    detected_on: "13 April 2024, 23:55:11",
+    user: "USER",
+    detecting_module: "Network Protection",
+    detecting_technology: "Web protection - Web Traffic Scan",
+    threat_name: "",
+    fileless_attack: false,
+    sha256: "",
+    container_host: "",
+  },
+  {
+    category: "Website",
+    details: "seegamezpicks.info/ZTVSRUsEVz8x",
+    command_line: "",
+    action_taken: "Blocked",
+    occurrences: 1,
+    threat_type: "Web malware",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.105",
+    endpoint_type: "Workstation",
+    detected_on: "13 April 2024, 23:53:34",
+    user: "USER",
+    detecting_module: "Network Protection",
+    detecting_technology: "Web protection - Web Traffic Scan",
+    threat_name: "",
+    fileless_attack: false,
+    sha256: "",
+    container_host: "",
+  },
+  {
+    category: "Website",
+    details:
+      "seegamezpicks.info/SGkxdjgpC1IbBylUU1BNOgUMUwoOTAMwXHsMRBQKLVsAElt+AQFYWyQGRBJeOgZfAhYmDEVTCg4cUB1QICRnN3ICHgguWjBdWTRpMAFmGFAeKGYSXioBdzJ2GREANGkODmYfQBg8W05wKg5FNWg/OAUufzsRfDUBHjNLQkwKL3cufhkoViNuGlt5HHEOLXYgdQIocxB2eQ1ENH5wE2dFVAA8dSdxLD9kLnIKBl81Xz8DeR9pDDtLTnQBKFkzXCBRQS5+P0wDMH0LLH8ubA45VB9bDQ9dBkwdHndCcBssYSBscA1+RmkMMHAnABoofxFvewFhN2AeM3IdFRktaDQIIC1GElMcWkIcfg8jUDt+Ky9UIwF+PGc3Xw8AYDNqIjx4P08gL1UgXwc/cDxWGiFFLn4PI1AveTgzezdbIztwO2wcWkEkYBwCczptGS1oNwg8KF0ZHXovYEQJHChlO3sHDgQVdh1QBzxPCgBmIWIaIQM0fS0sYDJhCgJBNAkJAHBECRwNAyBiLlkJNWIjHggueQlPWwVXJhkMLFkSDgUgVg8lARB9IgEBEw",
+    command_line: "",
+    action_taken: "Blocked",
+    occurrences: 1,
+    threat_type: "Web malware",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.105",
+    endpoint_type: "Workstation",
+    detected_on: "13 April 2024, 23:53:34",
+    user: "USER",
+    detecting_module: "Network Protection",
+    detecting_technology: "Web protection - Web Traffic Scan",
+    threat_name: "",
+    fileless_attack: false,
+    sha256: "",
+    container_host: "",
+  },
+  {
+    category: "Website",
+    details: "argyllsleonora.top/pntne",
+    command_line: "",
+    action_taken: "Blocked",
+    occurrences: 3,
+    threat_type: "Web malware",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.105",
+    endpoint_type: "Workstation",
+    detected_on: "13 April 2024, 23:53:22",
+    user: "USER",
+    detecting_module: "Network Protection",
+    detecting_technology: "Web protection - Web Traffic Scan",
+    threat_name: "",
+    fileless_attack: false,
+    sha256: "",
+    container_host: "",
+  },
+  {
+    category: "Website",
+    details: "filmovieflix.club/en/movie/1127087/sijjin",
+    command_line: "",
+    action_taken: "Blocked",
+    occurrences: 1,
+    threat_type: "Phishing",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.105",
+    endpoint_type: "Workstation",
+    detected_on: "13 April 2024, 23:50:04",
+    user: "USER",
+    detecting_module: "Network Protection",
+    detecting_technology: "Web protection - Antiphishing",
+    threat_name: "Phishing",
+    fileless_attack: false,
+    sha256: "",
+    container_host: "",
+  },
+  {
+    category: "Website",
+    details: "cloudflare-ipfs.com/ipns/unsupportedtokens.uniswap.org",
+    command_line: "",
+    action_taken: "Blocked",
+    occurrences: 1,
+    threat_type: "Phishing",
+    endpoint_name: "ZUNGALI-PC",
+    ip: "10.0.0.69",
+    endpoint_type: "Workstation",
+    detected_on: "12 April 2024, 18:43:05",
+    user: "bzung",
+    detecting_module: "Network Protection",
+    detecting_technology: "Web protection - Antiphishing",
+    threat_name: "Phishing",
+    fileless_attack: false,
+    sha256: "",
+    container_host: "",
+  },
+  {
+    category: "Website",
+    details: "offergate-other7.com/3-iqzzm-b1d2-dlf6-j4tz",
+    command_line: "",
+    action_taken: "Blocked",
+    occurrences: 1,
+    threat_type: "Phishing",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.105",
+    endpoint_type: "Workstation",
+    detected_on: "12 April 2024, 09:40:09",
+    user: "USER",
+    detecting_module: "Network Protection",
+    detecting_technology: "Web protection - Antiphishing",
+    threat_name: "Phishing",
+    fileless_attack: false,
+    sha256: "",
+    container_host: "",
+  },
+  {
+    category: "File",
+    details:
+      "C:\\Users\\bzung\\AppData\\Local\\Programs\\NiceHash Miner\\app_3.1.0.9\\NHM.MinersDownloader.dll",
+    command_line: "",
+    action_taken: "Deleted",
+    occurrences: 1,
+    threat_type: "Virus",
+    endpoint_name: "ZUNGALI-PC",
+    ip: "10.0.0.69",
+    endpoint_type: "Workstation",
+    detected_on: "11 April 2024, 19:00:25",
+    user: "SYSTEM",
+    detecting_module: "Antimalware",
+    detecting_technology: "On-Demand - Scan Tasks",
+    threat_name: "Trojan.GenericKD.71666042",
+    fileless_attack: false,
+    sha256: "ddf8cac487ae5caf21fb44b2c4e86be35dfe059992b8b5f8a9d8df8a18a154ef",
+    container_host: "",
+  },
+  {
+    category: "File",
+    details:
+      "C:\\Users\\bzung\\AppData\\Local\\Programs\\NiceHash Miner\\app_3.1.0.9\\NHM.CommonWin32.dll",
+    command_line: "",
+    action_taken: "Deleted",
+    occurrences: 1,
+    threat_type: "Virus",
+    endpoint_name: "ZUNGALI-PC",
+    ip: "10.0.0.69",
+    endpoint_type: "Workstation",
+    detected_on: "11 April 2024, 19:00:25",
+    user: "SYSTEM",
+    detecting_module: "Antimalware",
+    detecting_technology: "On-Demand - Scan Tasks",
+    threat_name: "Gen:Variant.Tedy.555551",
+    fileless_attack: false,
+    sha256: "774070fb2516bdaf196f07026a9d08436fe05a6e1d3900e98e827a7a7650111f",
+    container_host: "",
+  },
+  {
+    category: "File",
+    details: "C:\\Users\\USER\\AppData\\Roaming\\vlewgqltdi\\corsve.dat",
+    command_line: "",
+    action_taken: "Deleted",
+    occurrences: 1,
+    threat_type: "Virus",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.105",
+    endpoint_type: "Workstation",
+    detected_on: "11 April 2024, 00:32:07",
+    user: "SYSTEM",
+    detecting_module: "Antimalware",
+    detecting_technology: "On-Access",
+    threat_name: "AIT.Heur2.Cottonmouth.9.D1F6C2BA.Gen",
+    fileless_attack: false,
+    sha256: "7c3d215e085c842786240fd5aff5fe910c2409a2ce16ec2749193dde70ea33c2",
+    container_host: "",
+  },
+  {
+    category: "Website",
+    details: "forazelftor.com/5/6685791/",
+    command_line: "",
+    action_taken: "Blocked",
+    occurrences: 1,
+    threat_type: "Phishing",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.105",
+    endpoint_type: "Workstation",
+    detected_on: "11 April 2024, 00:21:05",
+    user: "USER",
+    detecting_module: "Network Protection",
+    detecting_technology: "Web protection - Antiphishing",
+    threat_name: "Phishing",
+    fileless_attack: false,
+    sha256: "",
+    container_host: "",
+  },
+  {
+    category: "Website",
+    details: "forazelftor.com/5/6685791/",
+    command_line: "",
+    action_taken: "Blocked",
+    occurrences: 1,
+    threat_type: "Phishing",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.105",
+    endpoint_type: "Workstation",
+    detected_on: "10 April 2024, 23:56:52",
+    user: "USER",
+    detecting_module: "Network Protection",
+    detecting_technology: "Web protection - Antiphishing",
+    threat_name: "Phishing",
+    fileless_attack: false,
+    sha256: "",
+    container_host: "",
+  },
+  {
+    category: "Website",
+    details: "forazelftor.com/5/6685791/",
+    command_line: "",
+    action_taken: "Blocked",
+    occurrences: 1,
+    threat_type: "Phishing",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.103",
+    endpoint_type: "Workstation",
+    detected_on: "10 April 2024, 00:05:03",
+    user: "USER",
+    detecting_module: "Network Protection",
+    detecting_technology: "Web protection - Antiphishing",
+    threat_name: "Phishing",
+    fileless_attack: false,
+    sha256: "",
+    container_host: "",
+  },
+  {
+    category: "Website",
+    details: "forazelftor.com/5/6685791/",
+    command_line: "",
+    action_taken: "Blocked",
+    occurrences: 1,
+    threat_type: "Phishing",
+    endpoint_name: "DESKTOP-GUVLTG9",
+    ip: "192.168.0.103",
+    endpoint_type: "Workstation",
+    detected_on: "10 April 2024, 00:01:13",
+    user: "USER",
+    detecting_module: "Network Protection",
+    detecting_technology: "Web protection - Antiphishing",
+    threat_name: "Phishing",
+    fileless_attack: false,
+    sha256: "",
+    container_host: "",
+  },
+];
+
+const parseDate = (dateString) => {
+  const [day, month, yearAndTime] = dateString.split(" ");
+  const [year, time] = yearAndTime.split(", ");
+  const months = {
+    January: "01",
+    February: "02",
+    March: "03",
+    April: "04",
+    May: "05",
+    June: "06",
+    July: "07",
+    August: "08",
+    September: "09",
+    October: "10",
+    November: "11",
+    December: "12",
+  };
+  const formattedDate = `${day} ${months[month]} ${year} ${time}`;
+  return new Date(formattedDate);
+};
+
+const sortedData = data.sort(
+  (a, b) => parseDate(a.detected_on) - parseDate(b.detected_on)
+);
+
+const occurrencesByDate = {};
+
+sortedData.forEach((entry) => {
+  const date = entry.detected_on.split(",")[0];
+  const threatType = entry.threat_type;
+  occurrencesByDate[date] = occurrencesByDate[date] || {};
+  occurrencesByDate[date][threatType] =
+    (occurrencesByDate[date][threatType] || 0) + entry.occurrences;
+});
+
+const chartData = Object.entries(occurrencesByDate)
+  .sort((a, b) => new Date(a[0]) - new Date(b[0]))
+  .map(([date, occurrences]) => ({ x: date, ...occurrences }));
+
+const allThreatTypes = new Set();
+sortedData.forEach((item) => allThreatTypes.add(item.threat_type));
 
 const AreaChart = () => {
   const options = {
     chart: {
-      id: "animated-area",
-      animations: {
-        enabled: true,
-        easing: "easeinout",
-        speed: 1000,
-        animateGradually: {
-          enabled: true,
-          delay: 300,
-        },
-        dynamicAnimation: {
-          enabled: true,
-          speed: 500,
-        },
-      },
+      type: "area",
+      height: 350,
+      zoom: { enabled: false },
     },
+    dataLabels: { enabled: false },
+    stroke: { curve: "smooth" },
     xaxis: {
-      categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+      type: "date",
+      categories: chartData.map((data) => data.x),
     },
-    dataLabels: {
-      enabled: false,
+    tooltip: {
+      x: { format: "dd/MM/yy" },
     },
-    fill: {
-      type: "gradient",
-      gradient: {
-        shadeIntensity: 1,
-        opacityFrom: 0.7,
-        opacityTo: 0.9,
-        stops: [0, 90, 100],
-      },
+    theme: {
+      palette: "palette5",
     },
   };
 
-  const series = [
-    {
-      name: "Net Profit",
-      data: [34, 44, 54, 21, 12, 43],
-    },
-  ];
+  const series = Array.from(allThreatTypes).map((threatType) => {
+    return {
+      name: threatType,
+      data: chartData.map((data) => data[threatType] || 0),
+    };
+  });
 
   return (
     <div>
-      <Chart
+      <h1>Threat Occurrences Chart</h1>
+      <ReactApexChart
         options={options}
         series={series}
         type="area"
-        height={300}
-        width={500}
+        height={350}
       />
     </div>
   );
